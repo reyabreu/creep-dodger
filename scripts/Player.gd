@@ -32,8 +32,10 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		animated_sprite.play()
+		$Trail.emitting = true
 	else:
 		animated_sprite.stop()
+		$Trail.emitting = false
 	
 	# select correct animation sequence
 	if velocity.x != 0:

@@ -20,6 +20,8 @@ func game_over():
 	score_timer.stop()
 	mob_timer.stop()
 	hud.show_game_over()
+	$Music.stop()
+	$DeathSound.play()
 	
 func new_game():
 	score = 0
@@ -27,6 +29,7 @@ func new_game():
 	start_timer.start()
 	hud.update_score(score)
 	hud.show_message("Get Ready!")
+	$Music.play()
 	
 func _on_StartTimer_timeout():
 	mob_timer.start()
